@@ -12,7 +12,7 @@ using CsvHelper.Configuration;
 
 namespace AC2_M3UF5
 {
-    public class Helper
+    public class FileController
     {
         public static List<Region> ReadCSVFile(string filePath)
         {
@@ -67,5 +67,13 @@ namespace AC2_M3UF5
             xmlDoc.Save(xmlFilePath);
             Console.WriteLine(MsgAdded);
         }
+
+        public static void DeleteXMLFile(string xmlFilePath)
+        {
+            const string MsgDeleted = "XML file deleted successfully.";
+            File.Delete(xmlFilePath);
+            Console.WriteLine(MsgDeleted);
+        }
+
     }
 }

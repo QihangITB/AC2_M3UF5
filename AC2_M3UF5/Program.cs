@@ -7,17 +7,17 @@
             string csvPath = "../../../files/Consum_d_aigua_a_Catalunya_per_comarques_20240402.csv";
             string xmlPath = "../../../files/WaterConsumByRegions.xml";
 
-            List<Region> regions = Helper.ReadCSVFile(csvPath);
+            List<Region> regions = FileController.ReadCSVFile(csvPath);
 
             foreach (Region region in regions)
             {
                 if (File.Exists(xmlPath))
                 {
-                    Helper.AddRegionToXMLFileWithLINQ(xmlPath, region);
+                    FileController.AddRegionToXMLFileWithLINQ(xmlPath, region);
                 }
                 else
                 {
-                    Helper.CreateXMLFileWithLINQ(xmlPath, region);
+                    FileController.CreateXMLFileWithLINQ(xmlPath, region);
                 }
             }
         }
