@@ -9,8 +9,9 @@ namespace AC2_M3UF5
 {
     public class Region
     {
+        private const string DefaultStringValue = "-";
         private const int DefaultIntValue = 0;
-        private const string DefaultStringValue = "";
+
 
         [Name("Any")]
         public int Year { get; set; }
@@ -19,7 +20,7 @@ namespace AC2_M3UF5
         public int Code { get; set; }
 
         [Name("Comarca")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [Name("Població")]
         public int Population { get; set; }
@@ -52,7 +53,8 @@ namespace AC2_M3UF5
         { }
         public override string ToString()
         {
-            return $"Year: {Year}, Code: {Code}, Name: {Name}, Population: {Population}, DomesticConsum: {DomesticConsum}, EconomyConsum: {EconomyConsum}, TotalConsum: {TotalConsum}, ConsumPerCapita: {ConsumCapita}";
+            //Mostrem només els camps que són més importants per a la visualització de les dades.
+            return $"Year: {Year}, Code: {Code}, Name: {Name}, Population: {Population}, TotalConsum: {TotalConsum}";
         }
     }
 }
